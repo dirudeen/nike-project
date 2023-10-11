@@ -12,18 +12,18 @@ describe("Button", () => {
   test("should render correctly with props", () => {
     render(
       <Button
-      label="Sign up"
-      icon={"https://www.gstatic.com/webp/gallery3/1.sm.png"}
-      bgClr="#fffff"
-      borderClr="#fffff"
-      textClr="#fffff"
+        label="Sign up"
+        icon={"https://www.gstatic.com/webp/gallery3/1.sm.png"}
+        bgClr="#fffff"
+        borderClr="#fffff"
+        textClr="#fffff"
       />,
     );
 
-    const buttonElment = screen.getByRole("button")
-    expect(buttonElment).toHaveTextContent("Sign up")
+    const buttonElment = screen.getByRole("button");
+    expect(buttonElment).toHaveTextContent("Sign up");
 
-    const imgElement = screen.getByAltText(/arrow-right/i)
-    expect(imgElement).toHaveAttribute("src")
+    const imgElement = screen.getByAltText(/arrow-right/i);
+    expect(imgElement).toHaveAttribute("src");
   });
 });
