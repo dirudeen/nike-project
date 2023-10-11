@@ -17,11 +17,13 @@ describe("Button", () => {
         bgClr="#fffff"
         borderClr="#fffff"
         textClr="#fffff"
+        fullWidth={true}
       />,
     );
 
     const buttonElment = screen.getByRole("button");
     expect(buttonElment).toHaveTextContent("Sign up");
+    expect(buttonElment).toHaveClass("w-full")
 
     const imgElement = screen.getByAltText(/arrow-right/i);
     expect(imgElement).toHaveAttribute("src");
