@@ -7,28 +7,23 @@ import NavigationLinks from "./NavigationLinks";
 
 const logoVariant = {
   hidden: {
-    x: -200
+    x: -200,
   },
 
   visible: {
     x: 0,
-    transition: {delay: 0.3}
-  }
-  
-}
-
-
-
+    transition: { delay: 0.3 },
+  },
+};
 
 const Nav = ({ onToggle }) => {
   const [isActive, setIsActive] = useState(false);
 
   const sidebarToggleHandler = (isFalse = false) => {
-    
-    if(isFalse) {
-      setIsActive(false)
+    if (isFalse) {
+      setIsActive(false);
     } else {
-      setIsActive(prevState => !prevState)
+      setIsActive((prevState) => !prevState);
     }
     onToggle(isActive);
   };
@@ -36,14 +31,19 @@ const Nav = ({ onToggle }) => {
   return (
     <header className="padding-x absolute z-10 w-full py-8 ">
       <nav className="max-container flex items-center justify-between">
-        <motion.a 
-        variants={logoVariant}
-        initial="hidden"
-        animate="visible"
-        href="/">
+        <motion.a
+          variants={logoVariant}
+          initial="hidden"
+          animate="visible"
+          href="/"
+        >
           <img src={headerLogo} alt="Nike Logo" width={120} height={40} />
         </motion.a>
-        <NavigationLinks isActive={isActive} onToggleHandler={sidebarToggleHandler} navLinks={navLinks} />
+        <NavigationLinks
+          isActive={isActive}
+          onToggleHandler={sidebarToggleHandler}
+          navLinks={navLinks}
+        />
 
         <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
