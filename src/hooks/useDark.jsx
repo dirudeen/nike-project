@@ -11,17 +11,18 @@ export default function useDark() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
-
+  let initialRender = 1
   useEffect(() => {
     const root = window.document.documentElement;
-    if (theme === "light") {
+    if (theme === "light" && initialRender === 2) {
       root.classList.remove("light");
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
       root.classList.add("light");
     }
-  }, [theme]);
+    initialRender = 2
+  }, [theme, initialRender]);
 
   return { toggleTheme };
 }
