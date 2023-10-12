@@ -14,8 +14,6 @@ import {
 const App = () => {
   const [sidebarIsNotActive, setSidebarIsNotActive] = useState(true);
 
-
-
   const toggleHander = (val) => {
     setSidebarIsNotActive(val);
   };
@@ -23,7 +21,7 @@ const App = () => {
   return (
     <main
       className={` ${
-        sidebarIsNotActive ?  "relative" : "fixed inset-0 overflow-hidden" 
+        sidebarIsNotActive ? "relative" : "fixed inset-0 overflow-hidden"
       }`}
     >
       <Nav onToggle={toggleHander} />
