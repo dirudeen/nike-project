@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="mt-8 flex items-center gap-5">
             {socialMedia.map((icon) => (
               <div
-                key={icon.alt}
+                key={crypto.randomUUID()}
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white "
               >
                 <img src={icon.src} alt={icon.alt} width={24} height={24} />
@@ -29,14 +29,14 @@ const Footer = () => {
 
       <div className="mt-20 flex flex-1 flex-wrap justify-between gap-20 lg:gap-10">
         {footerLinks.map((section) => (
-          <div key={section}>
+          <div key={crypto.randomUUID()}>
             <h4 className="mb-6 font-montserrat text-2xl font-medium leading-normal text-white">
               {section.title}
             </h4>
             <ul>
-              {section.links.map((link, index) => (
+              {section.links.map((link) => (
                 <li
-                  key={index}
+                  key={crypto.randomUUID()}
                   className="mt-3 font-montserrat text-base leading-normal text-white-400 hover:text-slate-gray"
                 >
                   <a href={link.link}>{link.name}</a>
