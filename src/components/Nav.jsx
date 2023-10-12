@@ -2,12 +2,18 @@ import { useState } from "react";
 import { headerLogo } from "../assets/images/index";
 import { close, hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
+import { motion } from "framer-motion";
+import NavigationLinks from "./NavigationLinks";
+
+
+
 
 const Nav = ({ onToggle }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const sidebarToggleHandler = (setFalse = false) => {
-    if(setFalse) {
+  const sidebarToggleHandler = (isFalse = false) => {
+    
+    if(isFalse) {
       setIsActive(false)
     } else {
       setIsActive(prevState => !prevState)
@@ -21,25 +27,19 @@ const Nav = ({ onToggle }) => {
         <a href="/">
           <img src={headerLogo} alt="Nike Logo" width={120} height={40} />
         </a>
-        {isActive && (
-          <div className="fixed mx-[-4rem] h-[200%] w-screen bg-slate-800 opacity-60 lg:hidden"></div>
-        )}
-        <ul
-          className={`flex flex-1 gap-16 lg:justify-center ${
-            isActive ? "sidebar" : "max-lg:hidden"
-          }`}
-        >
-          {navLinks.map((link) => (
-            <li key={link.label} onClick={() => sidebarToggleHandler(true)}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-        </ul>
+        <NavigationLinks isActive={isActive} onToggleHandler={sidebarToggleHandler} navLinks={navLinks} />
 
-        <div
+        <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
           onClick={() => sidebarToggleHandler()}
           role="button"
+          initial={{
+            x: 800,
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{ delay: 1 }}
         >
           <img
             src={isActive ? close : hamburger}
@@ -47,7 +47,7 @@ const Nav = ({ onToggle }) => {
             width={30}
             height={40}
           />
-        </div>
+        </motion.div>
       </nav>
     </header>
   );
