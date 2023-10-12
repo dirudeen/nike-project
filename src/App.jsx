@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import Nav from "./components/Nav";
 import {
   CustomerReviews,
@@ -12,15 +12,20 @@ import {
 } from "./sections/index";
 
 const App = () => {
-  const [sidebarIsActive, setSidebarIsActive] = useState(null);
+  const [sidebarIsNotActive, setSidebarIsNotActive] = useState(true);
 
 
-  const toggleHander = useCallback((val) => {
-    setSidebarIsActive(val)
-  },[]);
+
+  const toggleHander = (val) => {
+    setSidebarIsNotActive(val);
+  };
 
   return (
-    <main className={` ${!sidebarIsActive ? "fixed overflow-hidden inset-0": "relative"}`}>
+    <main
+      className={` ${
+        sidebarIsNotActive ?  "relative" : "fixed inset-0 overflow-hidden" 
+      }`}
+    >
       <Nav onToggle={toggleHander} />
       <section className="xl:padding-l wide:padding-r padding-b">
         <Hero />

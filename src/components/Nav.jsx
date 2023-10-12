@@ -3,32 +3,50 @@ import { headerLogo } from "../assets/images/index";
 import { close, hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 
-const Nav = ({onToggle}) => {
+const Nav = ({ onToggle }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const sidebarToggleHandler = () => {
-    setIsActive(prevState => !prevState)
-    onToggle(isActive)
-  }
+  const sidebarToggleHandler = (setFalse = false) => {
+    if(setFalse) {
+      setIsActive(false)
+    } else {
+      setIsActive(prevState => !prevState)
+    }
+    onToggle(isActive);
+  };
+
   return (
-    <header className="padding-x py-8 absolute z-10 w-full ">
-      <nav className="flex justify-between items-center max-container">
+    <header className="padding-x absolute z-10 w-full py-8 ">
+      <nav className="max-container flex items-center justify-between">
         <a href="/">
           <img src={headerLogo} alt="Nike Logo" width={120} height={40} />
         </a>
-        {isActive && <div className="lg:hidden fixed w-screen h-[200%] bg-slate-800 opacity-60 mx-[-4rem]"></div>}
-        <ul className={`flex flex-1 lg:justify-center gap-16 ${isActive ? "sidebar" : "max-lg:hidden"}`}>
+        {isActive && (
+          <div className="fixed mx-[-4rem] h-[200%] w-screen bg-slate-800 opacity-60 lg:hidden"></div>
+        )}
+        <ul
+          className={`flex flex-1 gap-16 lg:justify-center ${
+            isActive ? "sidebar" : "max-lg:hidden"
+          }`}
+        >
           {navLinks.map((link) => (
-            <li key={link.label} onClick={() => sidebarToggleHandler()}>
+            <li key={link.label} onClick={() => sidebarToggleHandler(true)}>
               <a href={link.href}>{link.label}</a>
             </li>
           ))}
         </ul>
 
-        <div className="hidden max-lg:block max-lg:relative z-[100] cursor-pointer"
-        onClick={sidebarToggleHandler}
-        role="button">
-          <img src={isActive ? close : hamburger} alt="hamburger-menu" width={30} height={40} />
+        <div
+          className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
+          onClick={() => sidebarToggleHandler()}
+          role="button"
+        >
+          <img
+            src={isActive ? close : hamburger}
+            alt="hamburger-menu"
+            width={30}
+            height={40}
+          />
         </div>
       </nav>
     </header>
