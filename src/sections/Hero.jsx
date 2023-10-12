@@ -18,7 +18,7 @@ const Hero = () => {
         </p>
 
         <h1 className="mt-10 font-palanquin text-8xl font-bold max-sm:text-[4.5rem] max-sm:leading-[5.125rem]">
-          <span className="relative z-10 pr-10 xl:whitespace-nowrap xl:bg-white">
+          <span className="relative lg:z-10 pr-10 xl:whitespace-nowrap xl:bg-white">
             The New Arrival
           </span>
           <br />
