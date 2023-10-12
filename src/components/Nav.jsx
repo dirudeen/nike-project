@@ -5,6 +5,18 @@ import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import NavigationLinks from "./NavigationLinks";
 
+const logoVariant = {
+  hidden: {
+    x: -200
+  },
+
+  visible: {
+    x: 0,
+    transition: {delay: 0.3}
+  }
+  
+}
+
 
 
 
@@ -24,9 +36,13 @@ const Nav = ({ onToggle }) => {
   return (
     <header className="padding-x absolute z-10 w-full py-8 ">
       <nav className="max-container flex items-center justify-between">
-        <a href="/">
+        <motion.a 
+        variants={logoVariant}
+        initial="hidden"
+        animate="visible"
+        href="/">
           <img src={headerLogo} alt="Nike Logo" width={120} height={40} />
-        </a>
+        </motion.a>
         <NavigationLinks isActive={isActive} onToggleHandler={sidebarToggleHandler} navLinks={navLinks} />
 
         <motion.div
@@ -39,9 +55,9 @@ const Nav = ({ onToggle }) => {
           animate={{
             x: 0,
           }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 0.5 }}
         >
-          <img
+          <motion.img
             src={isActive ? close : hamburger}
             alt="hamburger-menu"
             width={30}
