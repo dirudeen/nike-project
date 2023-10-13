@@ -5,8 +5,9 @@ import Button from "../components/Button";
 import ShoeCard from "../components/ShoeCard";
 import { shoes, statistics } from "../constants";
 
-const Hero = () => {
+const Hero = ({theme}) => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+
   return (
     <section
       id="home"
@@ -18,14 +19,14 @@ const Hero = () => {
         </p>
 
         <h1 className="mt-10 font-palanquin text-8xl font-bold max-sm:text-[4.5rem] max-sm:leading-[5.125rem]">
-          <span className="relative lg:z-10 pr-10 xl:whitespace-nowrap xl:bg-white">
+          <span className="relative pr-10 lg:z-10 xl:whitespace-nowrap xl:bg-white dark:xl:bg-slate-900">
             The New Arrival
           </span>
           <br />
           <span className="mt-3 inline-block text-coral-red">Nike</span> Shoes
         </h1>
 
-        <p className="mb-16 mt-6 font-montserrat text-lg leading-8 text-slate-gray sm:max-w-sm">
+        <p className="dark:text-slate-light-gray mb-16 mt-6 font-montserrat text-lg leading-8 text-slate-gray sm:max-w-sm">
           Discover stylish Nike arrivals, quality comfort and innovation for
           your active life
         </p>
@@ -36,7 +37,7 @@ const Hero = () => {
           {statistics.map((stats) => (
             <div key={stats.label}>
               <p className="font-palanquin text-4xl font-bold">{stats.value}</p>
-              <p className="font-montserrat leading-7 text-slate-gray">
+              <p className="dark:text-slate-light-gray font-montserrat leading-7 text-slate-gray">
                 {stats.label}
               </p>
             </div>
@@ -44,7 +45,11 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative flex flex-1 items-center justify-center bg-primary bg-hero bg-center max-xl:py-40 xl:min-h-screen">
+      <div
+        className={` dark:bg-slate-dark-600 relative flex  flex-1 items-center justify-center bg-center max-xl:py-40 xl:min-h-screen ${
+          theme === "light" ? "bg-hero" : ""
+        }`}
+      >
         <img
           src={bigShoeImg}
           alt="shoe collection"
@@ -62,6 +67,7 @@ const Hero = () => {
                   setBigShoeImg(shoe);
                 }}
                 bigShoeImg={bigShoeImg}
+                theme={theme}
               />
             </div>
           ))}
