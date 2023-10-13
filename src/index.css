@@ -19,7 +19,7 @@
   }
 
   .input {
-    @apply border pl-5 text-base leading-normal text-slate-gray outline-none max-sm:w-full max-sm:rounded-full max-sm:border-slate-gray max-sm:p-5 sm:flex-1 sm:border-none;
+    @apply border pl-5 text-base leading-normal text-slate-gray outline-none max-sm:w-full max-sm:rounded-full max-sm:border-slate-gray max-sm:p-5 sm:flex-1 sm:border-none dark:bg-inherit dark:text-slate-light-gray;
   }
 
   .sidebarAnimateOut {
