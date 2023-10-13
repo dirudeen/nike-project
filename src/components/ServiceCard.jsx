@@ -9,7 +9,7 @@ const ServiceCard = ({imgURL, label, subText}) => {
         <h3 className="mt-5 font-palanquin text-3xl font-bold leading-normal">
           {label}
         </h3>
-        <p className="mt-3 break-words font-montserrat text-lg leading-normal text-slate-gray">
+        <p className="dark:text-slate-light-gray mt-3 break-words font-montserrat text-lg leading-normal  text-slate-gray">
           {subText}
         </p>
       </div>
