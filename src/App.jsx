@@ -10,9 +10,11 @@ import {
   Services,
   Subscribe,
 } from "./sections/index";
+import useDark from "./hooks/useDark";
 
 const App = () => {
   const [sidebarIsNotActive, setSidebarIsNotActive] = useState(true);
+  const {theme , toggleTheme } = useDark()
 
   const toggleHander = (val) => {
     setSidebarIsNotActive(val);
@@ -20,13 +22,13 @@ const App = () => {
 
   return (
     <main
-      className={` ${
+      className={` dark:bg-slate-900 dark:text-white ${
         sidebarIsNotActive ? "relative" : "fixed inset-0 overflow-hidden"
       }`}
     >
-      <Nav onToggle={toggleHander} />
+      <Nav onToggle={toggleHander} toggleTheme={toggleTheme} />
       <section className="xl:padding-l wide:padding-r padding-b">
-        <Hero />
+        <Hero theme={theme}/>
       </section>
 
       <section className="padding">
