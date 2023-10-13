@@ -1,10 +1,11 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { headerLogo } from "../assets/images/index";
 import { close, hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import NavigationLinks from "./NavigationLinks";
-import useDark from "../hooks/useDark";
+
+
 
 const logoVariant = {
   hidden: {
@@ -17,10 +18,8 @@ const logoVariant = {
   },
 };
 
-const Nav = ({ onToggle }) => {
+const Nav = ({ onToggle, toggleTheme, theme }) => {
   const [isActive, setIsActive] = useState(false);
-  const { toggleTheme } = useDark()
- 
 
   const sidebarToggleHandler = (isFalse = false) => {
     if (isFalse) {
@@ -46,12 +45,11 @@ const Nav = ({ onToggle }) => {
           isActive={isActive}
           onToggleHandler={sidebarToggleHandler}
           navLinks={navLinks}
+          theme={theme}
         />
 
         <div>
-          <button onClick={() => toggleTheme()}>
-            toggle dark theme
-          </button>
+          <button onClick={() => toggleTheme()}>toggle dark theme</button>
         </div>
         <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
@@ -70,6 +68,7 @@ const Nav = ({ onToggle }) => {
             alt="hamburger-menu"
             width={30}
             height={40}
+            className="dark:whiteColor"
           />
         </motion.div>
       </nav>
