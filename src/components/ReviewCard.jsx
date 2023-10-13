@@ -9,7 +9,9 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
         className="h-[120px] w-[120px] rounded-full object-cover"
       />
 
-      <p className="info-text mt-6 max-w-sm text-center">{feedback}</p>
+      <p className="info-text dark:text-slate-light-gray mt-6 max-w-sm  text-center">
+        {feedback}
+      </p>
       <div className="mt-3 flex items-center justify-center gap-2.5">
         <img
           src={star}
@@ -18,7 +20,9 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
           height={24}
           className="m-0 object-contain"
         />
-        <p className="font-montserrat text-xl text-slate-gray">{rating}</p>
+        <p className="dark:text-slate-light-gray font-montserrat text-xl  text-slate-gray">
+          {rating}
+        </p>
       </div>
       <h3 className="mt-1 text-center font-palanquin text-3xl font-bold">
         {customerName}
