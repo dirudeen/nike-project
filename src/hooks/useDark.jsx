@@ -25,5 +25,5 @@ export default function useDark() {
     
   }, [theme]);
 
-  return { toggleTheme };
+  return { theme, toggleTheme };
 }
