@@ -26,7 +26,7 @@ const App = () => {
           sidebarIsNotActive ? "relative" : "fixed inset-0 overflow-hidden"
         }`}
       >
-        <Nav onToggle={toggleHander} toggleTheme={toggleTheme} />
+        <Nav onToggle={toggleHander} toggleTheme={toggleTheme} theme={theme} />
         <section className="xl:padding-l wide:padding-r padding-b">
           <Hero theme={theme} />
         </section>
