@@ -47,7 +47,7 @@ const App = () => {
           <SpecialOffer />
         </section>
 
-        <section className="padding bg-pale-blue">
+        <section className="padding bg-pale-blue dark:bg-inherit">
           <CustomerReviews />
         </section>
 
