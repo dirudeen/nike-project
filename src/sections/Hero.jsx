@@ -4,8 +4,21 @@ import { bigShoe1 } from "../assets/images";
 import Button from "../components/Button";
 import ShoeCard from "../components/ShoeCard";
 import { shoes, statistics } from "../constants";
+import { motion } from "framer-motion";
 
-const Hero = ({theme}) => {
+const HeroTextVariant = {
+  hidden: {
+    x: -50,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { delay: 0.5, duration: 1 },
+  },
+};
+
+const Hero = ({ theme }) => {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
   return (
@@ -13,20 +26,25 @@ const Hero = ({theme}) => {
       id="home"
       className="max-container flex min-h-full w-full flex-col justify-center gap-10 xl:flex-row"
     >
-      <div className="max-xl:padding-x relative flex w-full flex-col items-start justify-center pt-28 xl:w-2/5">
+      <motion.div
+        className="max-xl:padding-x relative flex w-full flex-col items-start justify-center pt-28 xl:w-2/5"
+        variants={HeroTextVariant}
+        initial="hidden"
+        animate="visible"
+      >
         <p className="font-montserrat text-xl text-coral-red ">
           Our Summer Collections
         </p>
 
         <h1 className="mt-10 font-palanquin text-8xl font-bold max-sm:text-[4.5rem] max-sm:leading-[5.125rem]">
-          <span className="relative pr-10 lg:z-10 xl:whitespace-nowrap xl:bg-white dark:xl:bg-slate-900">
+          <span className="relative pr-10 lg:z-40 xl:whitespace-nowrap xl:bg-white dark:xl:bg-slate-900">
             The New Arrival
           </span>
           <br />
           <span className="mt-3 inline-block text-coral-red">Nike</span> Shoes
         </h1>
 
-        <p className="dark:text-slate-light-gray mb-16 mt-6 font-montserrat text-lg leading-8 text-slate-gray sm:max-w-sm">
+        <p className="mb-16 mt-6 font-montserrat text-lg leading-8 text-slate-gray dark:text-slate-light-gray sm:max-w-sm">
           Discover stylish Nike arrivals, quality comfort and innovation for
           your active life
         </p>
@@ -37,18 +55,21 @@ const Hero = ({theme}) => {
           {statistics.map((stats) => (
             <div key={stats.label}>
               <p className="font-palanquin text-4xl font-bold">{stats.value}</p>
-              <p className="dark:text-slate-light-gray font-montserrat leading-7 text-slate-gray">
+              <p className="font-montserrat leading-7 text-slate-gray dark:text-slate-light-gray">
                 {stats.label}
               </p>
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div
-        className={` dark:bg-slate-dark-600 relative flex  flex-1 items-center justify-center bg-center max-xl:py-40 xl:min-h-screen ${
+      <motion.div
+        className={` relative flex flex-1  items-center justify-center bg-center dark:bg-slate-dark-600 max-xl:py-40 xl:min-h-screen ${
           theme === "light" ? "bg-hero" : ""
         }`}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
       >
         <img
           src={bigShoeImg}
@@ -72,7 +93,7 @@ const Hero = ({theme}) => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
