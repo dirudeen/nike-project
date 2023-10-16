@@ -12,7 +12,7 @@ const popularCardVariant = {
         scale: 1,
         opacity: 1,
         rotate: 0,
-        transition: {duration: 0.8, easings: "easeOut"}
+        transition: {duration: 0.8, ease: "easeOut"}
     }
 }
 
