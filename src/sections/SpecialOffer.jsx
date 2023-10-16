@@ -1,12 +1,45 @@
+import { motion } from "framer-motion";
 import { arrowRight } from "../assets/icons";
 import { offer } from "../assets/images";
 import Button from "../components/Button";
+import useScrollReveal from "../hooks/useScrollReveal";
 
+const textContainerVariants = {
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { ease: "easeOut", duration: 1 },
+  },
+};
+
+const ImageContainerVariants = {
+  hidden: {
+    scale: 0,
+    opacity: 0,
+  },
+
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { ease: "easeOut", duration: 1 },
+  },
+};
 
 const SpecialOffer = () => {
+  const {ref, control} = useScrollReveal();
     return (
       <section className="max-container flex items-center gap-10 max-xl:flex-col-reverse">
-        <div className="flex-1">
+        <motion.div className="flex-1"
+        variants={ImageContainerVariants}
+        animate={control}
+        initial="hidden"
+        ref={ref}
+        >
           <img
             src={offer}
             height={687}
@@ -14,9 +47,14 @@ const SpecialOffer = () => {
             alt="Special-Offer"
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col">
+        <motion.div className="flex flex-col"
+        variants={textContainerVariants}
+        initial="hidden"
+        animate={control}
+        ref={ref}
+        >
           <h2 className="mt-10 font-palanquin text-4xl font-bold capitalize lg:max-w-lg">
             <span className="text-coral-red">Special</span> Offer
           </h2>
@@ -40,7 +78,7 @@ const SpecialOffer = () => {
               textClr="text-slate-gray"
             />
           </div>
-        </div>
+        </motion.div>
       </section>
     );
 }
