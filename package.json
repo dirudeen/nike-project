@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest dev --globals",
-    "coverage": "vitest dev --coverage"
+    "coverage": "vitest dev --coverage --WatchAll",
+    "format": "prettier --ignore-path .gitignore --write \"src/**/**/*.{jsx, js, css, scss}\""
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
