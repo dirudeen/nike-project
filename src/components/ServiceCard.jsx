@@ -15,7 +15,7 @@ const containerVariants = {
 };
 
 const ServiceCard = ({ imgURL, label, subText }) => {
-  const {ref, control} = useScrollReveal()
+  const { ref, control } = useScrollReveal();
   return (
     <motion.div
       className="w-full flex-1 rounded-[1.35rem] px-10 py-16 shadow-3xl dark:bg-slate-900 dark:text-white dark:shadow-dark  sm:w-[21.875] sm:min-w-[21.875]"

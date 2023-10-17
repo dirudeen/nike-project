@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import Button from "../components/Button";
 import useScrollReveal from "../hooks/useScrollReveal";
 
-
 const textContainerVariants = {
   hidden: {
     opacity: 0,
@@ -29,7 +28,6 @@ const inputContainerVariants = {
   },
 };
 
-
 const Subscribe = () => {
   const { ref, control } = useScrollReveal();
   return (
@@ -47,11 +45,12 @@ const Subscribe = () => {
         Sign Up for
         <span className="text-coral-red"> Updates</span> & Newsletter
       </motion.h3>
-      <motion.div className="flex w-full items-center gap-5 rounded-full p-2.5 max-sm:flex-col sm:border sm:border-slate-gray lg:max-w-[40%]"
-      variants={inputContainerVariants}
-      initial="hidden"
-      animate={control}
-      ref={ref}
+      <motion.div
+        className="flex w-full items-center gap-5 rounded-full p-2.5 max-sm:flex-col sm:border sm:border-slate-gray lg:max-w-[40%]"
+        variants={inputContainerVariants}
+        initial="hidden"
+        animate={control}
+        ref={ref}
       >
         <input type="text" placeholder="Subscribe@nike.com" className="input" />
         <div className="flex items-center max-sm:w-full max-sm:justify-end">

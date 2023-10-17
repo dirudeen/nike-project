@@ -6,13 +6,12 @@ export default function useDark() {
     return savedTheme ? savedTheme : "light";
   });
 
-  
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
-  
+
   useEffect(() => {
     const root = window.document.documentElement;
     if (theme === "light") {
@@ -22,7 +21,6 @@ export default function useDark() {
       root.classList.remove("light");
       root.classList.add("dark");
     }
-    
   }, [theme]);
 
   return { theme, toggleTheme };

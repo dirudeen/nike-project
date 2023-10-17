@@ -8,12 +8,12 @@ import Subscribe from "./Subscribe";
 import SuperQuality from "./SuperQuality";
 
 export {
-    CustomerReviews,
-    Footer,
-    Hero,
-    PopularProducts,
-    SuperQuality,
-    SpecialOffer,
-    Services,
-    Subscribe
-}
+  CustomerReviews,
+  Footer,
+  Hero,
+  PopularProducts,
+  SuperQuality,
+  SpecialOffer,
+  Services,
+  Subscribe,
+};

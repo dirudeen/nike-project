@@ -20,13 +20,14 @@ const containerVariant = {
 };
 
 const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
-  const {ref, control} = useScrollReveal()
+  const { ref, control } = useScrollReveal();
   return (
-    <motion.div className="flex flex-col items-center justify-center dark:bg-slate-900 dark:text-white"
-    variants={containerVariant}
-    animate={control}
-    initial="hidden"
-    ref={ref}
+    <motion.div
+      className="flex flex-col items-center justify-center dark:bg-slate-900 dark:text-white"
+      variants={containerVariant}
+      animate={control}
+      initial="hidden"
+      ref={ref}
     >
       <img
         src={imgURL}
@@ -34,7 +35,7 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
         className="h-[120px] w-[120px] rounded-full object-cover"
       />
 
-      <p className="info-text dark:text-slate-light-gray mt-6 max-w-sm  text-center">
+      <p className="info-text mt-6 max-w-sm text-center  dark:text-slate-light-gray">
         {feedback}
       </p>
       <div className="mt-3 flex items-center justify-center gap-2.5">
@@ -45,7 +46,7 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
           height={24}
           className="m-0 object-contain"
         />
-        <p className="dark:text-slate-light-gray font-montserrat text-xl  text-slate-gray">
+        <p className="font-montserrat text-xl text-slate-gray  dark:text-slate-light-gray">
           {rating}
         </p>
       </div>

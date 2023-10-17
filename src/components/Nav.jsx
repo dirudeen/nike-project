@@ -1,12 +1,10 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { headerLogo } from "../assets/images/index";
 import { close, hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import NavigationLinks from "./NavigationLinks";
 import ToggleSwitcher from "./ToggleSwitcher";
-
-
 
 const logoVariant = {
   hidden: {
@@ -50,8 +48,7 @@ const Nav = ({ onToggle, toggleTheme, theme }) => {
         />
 
         <div>
-          <ToggleSwitcher toggleTheme={toggleTheme}/>
-          {/* <button onClick={() => toggleTheme()}>toggle dark theme</button> */}
+          <ToggleSwitcher toggleTheme={toggleTheme} />
         </div>
         <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"

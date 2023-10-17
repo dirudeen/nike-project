@@ -14,7 +14,11 @@ const ShoeCard = ({ imgURL, changeBigShoeImg, bigShoeImg, theme }) => {
       onClick={clickHandler}
       role="button"
     >
-      <div className={`flex items-center justify-center dark:bg-slate-dark-800 rounded-xl bg-coral-red ${theme === "light"? "bg-card": ""} bg-center max-sm:p-4 sm:h-40 sm:w-40`}>
+      <div
+        className={`flex items-center justify-center rounded-xl bg-coral-red dark:bg-slate-dark-800 ${
+          theme === "light" ? "bg-card" : ""
+        } bg-center max-sm:p-4 sm:h-40 sm:w-40`}
+      >
         <img
           src={imgURL.thumbnail}
           alt="shoe collection"

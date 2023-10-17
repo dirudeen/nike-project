@@ -16,9 +16,15 @@ describe("Shoe card", () => {
 
   test("should run the function after clicking once", async () => {
     userEvent.setup();
-    render(<ShoeCard changeBigShoeImg={mockFn} bigShoeImg={shoes[2].bigShoe} imgURL={shoes}/>);
+    render(
+      <ShoeCard
+        changeBigShoeImg={mockFn}
+        bigShoeImg={shoes[2].bigShoe}
+        imgURL={shoes}
+      />,
+    );
     const wrapperElement = screen.getByRole("button");
-    await userEvent.click(wrapperElement)
-    expect(mockFn).toBeCalledTimes(1)
+    await userEvent.click(wrapperElement);
+    expect(mockFn).toBeCalledTimes(1);
   });
 });
