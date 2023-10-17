@@ -11,6 +11,8 @@ import star from './star.svg'
 import truckFast from './truck-fast.svg'
 import twitter from './twitter.svg'
 import close from "./close-X.svg"
+import sunlight from "./sunlight.svg"
+import moon from "./moon.svg"
 
 export {
     arrowRight,
@@ -25,5 +27,7 @@ export {
     star,
     truckFast,
     twitter,
-    close
+    close,
+    sunlight,
+    moon,
 }
