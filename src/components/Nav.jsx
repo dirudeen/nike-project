@@ -4,6 +4,7 @@ import { close, hamburger } from "../assets/icons";
 import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import NavigationLinks from "./NavigationLinks";
+import ToggleSwitcher from "./ToggleSwitcher";
 
 
 
@@ -49,7 +50,8 @@ const Nav = ({ onToggle, toggleTheme, theme }) => {
         />
 
         <div>
-          <button onClick={() => toggleTheme()}>toggle dark theme</button>
+          <ToggleSwitcher toggleTheme={toggleTheme}/>
+          {/* <button onClick={() => toggleTheme()}>toggle dark theme</button> */}
         </div>
         <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
