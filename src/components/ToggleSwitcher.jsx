@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { moon, sunlight } from "../assets/icons";
-const ToggleSwitcher = ({ toggleTheme }) => {
+const ToggleSwitcher = ({ toggleTheme, theme }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (root.classList.contains("dark")) {
+    if (theme === "dark") {
       return setIsChecked(true);
     }
-  }, []);
+  }, [theme]);
 
   const changeHandler = () => {
     setIsChecked((prevState) => !prevState);
