@@ -48,7 +48,7 @@ const Nav = ({ onToggle, toggleTheme, theme }) => {
         />
 
         <div>
-          <ToggleSwitcher toggleTheme={toggleTheme} />
+          <ToggleSwitcher toggleTheme={toggleTheme} theme={theme}/>
         </div>
         <motion.div
           className="z-[100] hidden cursor-pointer max-lg:relative max-lg:block"
