@@ -13,6 +13,7 @@ const ShoeCard = ({ imgURL, changeBigShoeImg, bigShoeImg, theme }) => {
       } cursor-pointer max-sm:flex`}
       onClick={clickHandler}
       role="button"
+      data-testid={imgURL.id}
     >
       <div
         className={`flex items-center justify-center rounded-xl bg-coral-red dark:bg-slate-dark-800 ${
