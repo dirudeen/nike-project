@@ -32,14 +32,17 @@ export const shoes = [
   {
     thumbnail: thumbnailShoe1,
     bigShoe: bigShoe1,
+    id: "shoe 1"
   },
   {
     thumbnail: thumbnailShoe2,
     bigShoe: bigShoe2,
+    id: "shoe 2"
   },
   {
     thumbnail: thumbnailShoe3,
     bigShoe: bigShoe3,
+    id: "shoe 3"
   },
 ];
 
