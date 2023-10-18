@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import PopularProductCard from "../components/PopularProductCard";
 import { products } from "../constants";
 import useScrollReveal from "../hooks/useScrollReveal";
@@ -30,12 +31,15 @@ const PopularProducts = () => {
           Our <span className="text-coral-red">Popular</span> Projucts
         </h2>
         <p className="mt-2 font-montserrat text-slate-gray dark:text-slate-light-gray lg:max-w-lg">
-          Exprience top-notch quality and style with our sought-after
+          Experience top-notch quality and style with our sought-after
           selections. Discover a world of comfort, design and value
         </p>
       </motion.div>
 
-      <div className="mt-16 grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
+      <div
+        className="mt-16 grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-4"
+        data-testid="popular-products-container"
+      >
         {products.map((product) => (
           <PopularProductCard key={product.name} {...product} />
         ))}

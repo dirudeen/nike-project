@@ -25,6 +25,7 @@ const PopularProductCard = ({ imgURL, price, name, rating }) => {
       initial="hidden"
       animate={control}
       ref={ref}
+      data-testid="popular-product-card"
     >
       <img src={imgURL} alt={name} className="h-[12.5rem] w-[12.5rem]" />
       <div className="mt-8 flex justify-start gap-2.5">
