@@ -6,6 +6,9 @@ import ShoeCard from "../components/ShoeCard";
 import { shoes, statistics } from "../constants";
 import { motion } from "framer-motion";
 
+
+
+
 const HeroTextVariant = {
   hidden: {
     x: -50,
@@ -51,9 +54,11 @@ const Hero = ({ theme }) => {
 
         <Button label="Shop Now" icon={arrowRight} />
 
-        <div className="mt-20 flex w-full flex-wrap items-start justify-start gap-16">
+        <div className="mt-20 flex w-full flex-wrap items-start justify-start gap-16"
+        data-testid="statistics"
+        >
           {statistics.map((stats) => (
-            <div key={stats.label}>
+            <div key={stats.label} data-testid="stats">
               <p className="font-palanquin text-4xl font-bold">{stats.value}</p>
               <p className="font-montserrat leading-7 text-slate-gray dark:text-slate-light-gray">
                 {stats.label}
@@ -73,7 +78,7 @@ const Hero = ({ theme }) => {
       >
         <img
           src={bigShoeImg}
-          alt="shoe collection"
+          alt="Big shoe collection"
           width={610}
           height={500}
           className="object-contain"
