@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import PopularProductCard from "../components/PopularProductCard";
-
+import  "../mocks/intersectionObserverMock";
 import { test, describe, expect } from "vitest";
 
 describe("Popular product card", () => {
