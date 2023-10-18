@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import Hero from "../sections/Hero";
 import { shoes, statistics } from "../constants";
+import userEvent from "@testing-library/user-event";
 
 describe("Hero - Component", () => {
   test("should render with props correctly", () => {
@@ -37,7 +38,18 @@ describe("Hero - Component", () => {
     });
     expect(bigShoeImgElement).toBeInTheDocument();
 
-    const thumnailShoeImgElements = screen.getAllByAltText("shoe collection");
-    expect(thumnailShoeImgElements).toHaveLength(shoes.length);
+    const shoeThumnailElements = screen.getAllByAltText("shoe collection");
+    expect(shoeThumnailElements).toHaveLength(shoes.length);
+  });
+
+  test("should render bigShoe2 after clicking second shoe thumbnail", async () => {
+    userEvent.setup();
+    render(<Hero theme="dark" />);
+    const shoeThumnailElement = screen.getByTestId(shoes[1].id);
+    await act(async () => {
+      await userEvent.click(shoeThumnailElement);
+    });
+    const bigShoeImgElement = screen.getByAltText(/big shoe collection/i);
+    expect(bigShoeImgElement).toHaveAttribute("src", `${shoes[1].bigShoe}`);
   });
 });
