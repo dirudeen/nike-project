@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ServiceCard from "../components/ServiceCard";
 import { test, describe, expect } from "vitest";
+import "../mocks/intersectionObserverMock";
 
 describe("Service card", () => {
   test("should render correctly with props", () => {
