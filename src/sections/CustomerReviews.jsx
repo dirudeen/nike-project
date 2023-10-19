@@ -26,7 +26,7 @@ const CustomerReviews = () => {
         initial="hidden"
         ref={ref}
       >
-        What Our <span className="text-coral-red">Customers</span>Says?
+        What Our <span className="text-coral-red">Customers </span>Says?
       </motion.h3>
       <motion.p
         className="info-text m-auto mt-4 max-w-lg text-center  dark:text-slate-light-gray"
@@ -36,7 +36,7 @@ const CustomerReviews = () => {
         ref={ref}
       >
         Hear genuine stories from our satisfied customers about their
-        exceptional experiences with us
+        exceptional experiences with us.
       </motion.p>
 
       <div className="mt-24 flex flex-1 items-center justify-evenly gap-14 max-lg:flex-col">
