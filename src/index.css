@@ -56,7 +56,7 @@
     @apply max-lg:sidebarAnimateIn max-lg:fixed max-lg:bottom-0 max-lg:top-0  max-lg:z-[10] max-lg:h-full max-lg:w-80 max-lg:flex-col max-lg:justify-start max-lg:bg-white max-lg:px-4 max-lg:py-[7rem];
   }
 
-  .sidebar {
+  .sidebar-Out {
     @apply sidebarAnimateOut max-lg:fixed max-lg:bottom-0 max-lg:top-0  max-lg:z-[10] max-lg:h-full max-lg:w-80 max-lg:flex-col max-lg:justify-start max-lg:bg-white max-lg:px-4 max-lg:py-[7rem];
   }
 }

@@ -25,7 +25,7 @@ const NavigationLinks = ({ isActive, navLinks, onToggleHandler }) => {
       )}
       <motion.ul
         className={`flex flex-1 gap-16 max-lg:dark:bg-slate-800 lg:justify-center ${
-          isActive ? "sidebar" : "sidebar-In"
+          isActive ? "sidebar-Out" : "sidebar-In"
         }`}
         variants={linkVariants}
         initial="hidden"
