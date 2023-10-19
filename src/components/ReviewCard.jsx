@@ -28,6 +28,7 @@ const ReviewCard = ({ imgURL, customerName, rating, feedback }) => {
       animate={control}
       initial="hidden"
       ref={ref}
+      data-testid="review-card"
     >
       <img
         src={imgURL}
