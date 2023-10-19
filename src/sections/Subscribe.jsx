@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "../components/Button";
 import useScrollReveal from "../hooks/useScrollReveal";
+import { useState } from "react";
 
 const textContainerVariants = {
   hidden: {
@@ -30,10 +31,13 @@ const inputContainerVariants = {
 
 const Subscribe = () => {
   const { ref, control } = useScrollReveal();
+  const [isFocus, setIsFocus] = useState(false);
+  const [enterValue, setEnterValue] = useState("");
   return (
     <section
       className="max-container flex items-center justify-between gap-10 max-lg:flex-col"
       id="contact-us"
+      data-testid="subscribe-section"
     >
       <motion.h3
         className="font-palanquin  text-4xl font-bold leading-[65px] lg:max-w-md"
@@ -45,18 +49,29 @@ const Subscribe = () => {
         Sign Up for
         <span className="text-coral-red"> Updates</span> & Newsletter
       </motion.h3>
-      <motion.div
-        className="flex w-full items-center gap-5 rounded-full p-2.5 max-sm:flex-col sm:border sm:border-slate-gray lg:max-w-[40%]"
+      <motion.form
+        className={`flex w-full items-center gap-5 rounded-full p-2.5 max-sm:flex-col sm:border lg:max-w-[40%] ${
+          isFocus ? " sm:border-coral-red" : " sm:border-slate-gray"
+        }`}
         variants={inputContainerVariants}
         initial="hidden"
         animate={control}
         ref={ref}
+        role="form"
       >
-        <input type="text" placeholder="Subscribe@nike.com" className="input" />
+        <input
+          type="text"
+          placeholder="Subscribe@nike.com"
+          onBlur={() => setIsFocus(false)}
+          onFocus={() => setIsFocus(true)}
+          value={enterValue}
+          onChange={(e) => setEnterValue(e.target.value)}
+          className="input"
+        />
         <div className="flex items-center max-sm:w-full max-sm:justify-end">
           <Button label="Sign Up" fullWidth />
         </div>
-      </motion.div>
+      </motion.form>
     </section>
   );
 };
