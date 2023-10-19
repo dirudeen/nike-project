@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-wrap items-start justify-between gap-20 max-lg:flex-col">
         <div className="flex flex-col items-start">
           <a href="/">
-            <img src={footerLogo} alt="footerLogo" width={150} height={46} />
+            <img src={footerLogo} alt="footer Logo" width={150} height={46} />
           </a>
           <p className="mt-6 font-montserrat text-base leading-7 text-white-400 sm:max-w-sm">
             Get shoes ready for the new term at your nearest Nike store. Find
@@ -18,6 +18,7 @@ const Footer = () => {
             {socialMedia.map((icon, index) => (
               <div
                 key={index}
+                data-testid="social-media-icon"
                 className="flex h-12 w-12 items-center justify-center rounded-full bg-white "
               >
                 <img src={icon.src} alt={icon.alt} width={24} height={24} />
@@ -29,7 +30,9 @@ const Footer = () => {
 
       <div className="mt-20 flex flex-1 flex-wrap justify-between gap-20 lg:gap-10">
         {footerLinks.map((section, index) => (
-          <div key={index}>
+          <div key={index}
+          data-testid="footer-link"
+          >
             <h4 className="mb-6 font-montserrat text-2xl font-medium leading-normal text-white">
               {section.title}
             </h4>
@@ -39,7 +42,7 @@ const Footer = () => {
                   key={link.name}
                   className="mt-3 font-montserrat text-base leading-normal text-white-400 hover:text-slate-gray"
                 >
-                  <a href={link.link}>{link.name}</a>
+                  <a data-testid="link-element" href={link.link}>{link.name}</a>
                 </li>
               ))}
             </ul>
