@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import "../mocks/intersectionObserverMock";
 import { SpecialOffer } from "../sections";
@@ -26,7 +26,6 @@ describe("Special Offer - Component", () => {
   test('should render button component correctly', () => {
     render(<SpecialOffer />);
 
-    logRoles(document.body);
     const buttonElement = screen.getByRole("button", {
         name: "Learn More"
     });
