@@ -66,9 +66,9 @@ const SpecialOffer = () => {
           offer unparalleled value that sets us apart.
         </p>
         <p className="info-text mt-6 dark:text-slate-light-gray  lg:max-w-lg">
-          Navigate a reaalm of possibilites designed to fulfill your unique
+          Navigate a realm of possibilites designed to fulfill your unique
           desires, surpassing the loftiest expectations. Your journey with us is
-          nothing short of exceptional
+          nothing short of exceptional.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-4">
